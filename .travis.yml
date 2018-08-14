@@ -3,13 +3,13 @@ language: bash
 sudo: required
 services:
   - docker
+  - awscli
 
 before_install:
   - docker pull mesosphere/aws-cli
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
   - sudo unzip terraform_0.11.7_linux_amd64.zip && sudo mv terraform /usr/local/bin
   - terraform --version
-  - aws --version
   - apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
 
 script:
