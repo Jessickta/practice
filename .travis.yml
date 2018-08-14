@@ -1,3 +1,12 @@
 language: python
+
+sudo: required
+services:
+  - docker
+  - terraform
+
+before_install:
+  - docker pull mesosphere/aws-cli
+  
 script:
   - echo "Hello world"
