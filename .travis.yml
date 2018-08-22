@@ -11,12 +11,15 @@ before_deploy:
   - aws --version
 
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: "./test.sh"
-    branch: master
-
-  - provider: script
-    skip_cleanup: true
-    script: "./deploy.sh"
-    branch: master
+  - stage: one
+      name: "Stage One"
+      provider: script
+      skip_cleanup: true
+      script: "./test.sh"
+      branch: master
+  - stage: two
+      name: "Stage Two"
+      provider: script
+      skip_cleanup: true
+      script: "./deploy.sh"
+      branch: master
