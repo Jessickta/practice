@@ -10,8 +10,7 @@ before_deploy:
   - sudo apt-get install awscli
   - aws --version
 
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: "./deploy.sh"
-    branch: $TRAVIS_BRANCH
+jobs:
+  include:
+    - stage: deploy
+      script: ./deploy.sh
