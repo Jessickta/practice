@@ -14,3 +14,5 @@ jobs:
   include:
     - stage: deploy
       script: ./deploy.sh
+    - stage: destroy
+      script: ./destroy.sh

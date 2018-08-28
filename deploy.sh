@@ -1,13 +1,8 @@
 #!/bin/bash
 
-echo ${TRAVIS_BRANCH//\//\_}
-BRANCH=${TRAVIS_BRANCH//\//\_}
-
-echo $BRANCH
-
 #Apply terraform changes
-#terraform init
-#terraform plan
+terraform init
+terraform apply --auto_approve
 
 #feature/jta/travis_script
 #develop/jta/whatevs
