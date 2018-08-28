@@ -2,7 +2,7 @@
 
 #Apply terraform changes
 terraform init
-terraform apply --auto_approve
+terraform apply --auto-approve
 
 #feature/jta/travis_script
 #develop/jta/whatevs

@@ -1,4 +1,4 @@
 #!/bin/bash
 
 terraform get
-terraform destroy --auto_approve
+terraform destroy --auto-approve
