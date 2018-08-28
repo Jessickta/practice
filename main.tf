@@ -1,4 +1,7 @@
-provider "aws" {}
+provider "aws" {
+  version = "~> 1.26.0"
+  region = "eu-west-1"
+}
 
 provider "archive" {}
 
@@ -9,7 +12,7 @@ data "archive_file" "zip" {
 }
 
 resource "aws_iam_role" "lambda_iam_role" {
-  name = "lambda_iam_role"
+  name = "lambda_iam_role_for_jess"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -28,7 +31,7 @@ EOF
 }
 
 resource "aws_lambda_function" "lambda" {
-  function_name = "hello_lambda"
+  function_name = "hello_lambda_for_jess"
   handler = "hello_lambda.lambda_handler"
   runtime = "python2.7"
 
